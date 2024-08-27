@@ -1,0 +1,193 @@
+main { /* main 크기 고정 */
+    width: 1720px;
+}
+.box {
+    width: 1251px;
+    margin: 0 auto;
+}
+#boxTitle { /* 제목 */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+#insertBox {
+    display: flex;
+}
+#insertBox > div > p {
+    margin: 10px 0;
+}
+#insertBox > div table { /* 테이블 전체 */
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+
+}
+#insertBox > div > table:nth-of-type(1) {
+    border-radius : 10px;
+    border-style : hidden;
+    overflow: hidden;
+    box-shadow : 0 0 7px #999;
+}
+th, td {
+    border: 1px solid #ccc;
+    height: 53px;
+}
+th {
+    box-sizing: border-box;
+    width: 150px;
+    text-align: left;
+    padding-left: 30px;
+    background-color: #eee;
+}
+#insertBox > div > table tr:nth-child(5) td,
+#insertBox > div > table tr:nth-child(6) td,
+#optionBox > table tr:nth-child(2) td { /* 정가, 할인가, 여행일수, 수량 td */
+    width: 200px;
+}
+#insertBox > div > table tr:last-child { /* 상품설명 tr */
+    height: 100px;
+}
+#add { /* 추가 버튼 */
+    margin-left: 15px;
+    font-size: 15px;
+    vertical-align: top;
+    margin-top: 1px;
+}
+#optionBox { /* 상품 옵션 scroll div */
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    width: 721px;
+    height: 224px;
+    border-radius : 10px;
+    box-shadow : 0 0 7px #999;
+}
+#optionBox table {
+    margin-top: 0px;
+    border-radius : 10px;
+    overflow: hidden;
+    box-shadow : 0 0 5px #999;
+}
+.option:not(:last-child) { /* option table 간 간격 */
+    margin-bottom: 10px;
+}
+input[type=radio] {
+    margin-left: 16px;
+}
+select:nth-of-type(1) {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    outline: none;
+    margin-left: 5px;
+}
+select:nth-of-type(2) {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 334px;
+    outline: none;
+}
+input:not([type=file]), textarea { /* border, padding, outline */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+input[type=date] {
+    width: 229px;
+    margin: 0 5px;
+    text-align: center;
+}
+#insertBox > div > table tr:nth-of-type(3) input[type=text],
+.option tr:nth-of-type(1) input[type=text] { /* 상품명, 연령 input */
+    width: 519px;
+    margin-left: 5px;
+}
+.price, input[type=number] { /* 정가, 할인가, 수량 input */
+    width: 130px;
+    text-align: right;
+    margin: 0 5px;
+}
+textarea {
+    width: 519px;
+    height: 60px;
+    margin-left: 5px;
+}
+
+#insertBox > div:nth-child(2) { /* 이미지 감싸는 flex 오른쪽 div */
+    margin-left: 50px;
+}
+#insertBox > div > div > div { /* 이미지 감싸는 div 테두리 */
+    margin-top: 6px;
+    padding: 7px 0 0 7px;
+    border: 1px solid #ccc;
+    width: 488px;
+    border-radius : 10px;
+    border-style : hidden;
+    box-shadow : 0 0 7px #999;
+}
+#insertBox > div > div:nth-of-type(1) > div { /* 상품 이미지 감싸는 div */
+    height: 244px;
+}
+#insertBox > div > div:nth-of-type(1) > div > img:first-child { /* 상품 대표 이미지 */
+    float: left;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    width: 237px;
+    height: 237px;
+    object-fit: cover;
+    border-radius : 5px;
+}
+#insertBox > div > div:nth-of-type(1) > div > img:not(:first-child) { /* 상품 하위 이미지 */
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius : 5px;
+}
+#insertBox > div > div:nth-of-type(2) > div { /* 상품 상세 이미지 감싸는 div */
+    height: 324px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+#insertBox > div > div:nth-of-type(2) > div > img { /* 상품 상세 이미지 */
+    width: 155px;
+    height: 155px;
+    vertical-align: top;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    object-fit: cover;
+    border-radius : 5px;
+}
+
+.buttonBox {
+    text-align: center;
+    margin-top: 30px;
+}
+.buttonBox button:nth-child(1) {
+    background-color: #0D569B;
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #0D569B;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.buttonBox a:nth-child(2) {
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #0D569B;
+    border-radius: 5px;
+    color: #0D569B;
+    margin-left: 5px;
+    font-size: 20px;
+}

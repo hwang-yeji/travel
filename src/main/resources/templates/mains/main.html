@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/mainsCss/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/product/main.js"></script>
+    <title>re;code</title>
+</head>
+<body>
+<th:block th:include="layouts/header"></th:block>
+<main>
+    <div id="slideBox">
+        <ul>
+            <li><img src="/images/slide_img/autoslide_1.jpg"></li>
+            <li><img src="/images/slide_img/autoslide_2.jpg"></li>
+            <li><img src="/images/slide_img/autoslide_3.jpg"></li>
+        </ul>
+        <div>
+            <span></span>
+        </div>
+    </div>
+    <div id="bestBox">
+        <div id="grid1">
+            <div th:each="product : ${bestProducts}" th:onclick="|location.href='/product/${product.productId}'|"> <!-- 아이템 하나 -->
+                <img th:src="'http://192.168.106.12/travelFileServer/images/productRep/' + ${product.productRepImgList.isEmpty() ? 'noImg.gif' : product.productRepImgList[0].productRepImgSrc}">
+                <div>
+                    <p th:text="${product.productTitle}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="newBox">
+        <div id="grid2">
+            <div th:each="product : ${newProducts}" th:onclick="|location.href='/product/${product.productId}'|"> <!-- 아이템 하나 -->
+                <img th:src="'http://192.168.106.12/travelFileServer/images/productRep/' + ${product.productRepImgList.isEmpty() ? 'noImg.gif' : product.productRepImgList[0].productRepImgSrc}">
+                <p th:text="${product.productTitle}"></p>
+                <p th:utext="${product.productInfo}"></p>
+                <p><span th:text="${product.productRegularPrice}" th:style="${product.productDiscountPrice != null ? '' : 'font-size: 23px; text-decoration: none; color: black; font-weight: bold;'}"></span><span th:text="${product.productDiscountPrice != null ? product.productDiscountPrice : ''}" th:style="${product.productDiscountPrice != null ? '' : 'margin-left: 0;'}"></span>원<span th:if="${product.productDiscountPrice != null}"></span></p>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block th:include="layouts/footer"></th:block>
+</body>
+</html>

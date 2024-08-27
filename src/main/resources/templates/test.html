@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품 리스트</title>
+  <style>
+    .product-item {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .product-item.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<h1>상품 리스트</h1>
+<ul id="productList">
+  <li class="product-item">상품 1</li>
+  <li class="product-item">상품 2</li>
+  <li class="product-item">상품 3</li>
+  <li class="product-item">상품 4</li>
+</ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const items = document.querySelectorAll(".product-item");
+      items.forEach((item, index) => {
+          setTimeout(() => {
+              item.classList.add("fade-in");
+          }, index * 300);
+      });
+  });
+</script>
+</body>
+</html>
